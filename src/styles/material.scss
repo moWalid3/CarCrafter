@@ -1,0 +1,125 @@
+@use "@angular/material" as mat;
+@use "./light-theme" as theme;
+
+@include mat.core();
+
+:root {
+  @include mat.all-component-themes(theme.$light-theme);
+
+  // @include mat.core-theme(theme.$light-theme);
+  // @include mat.card-theme(theme.$light-theme);
+  // @include mat.toolbar-theme(theme.$light-theme);
+  // @include mat.form-field-theme(theme.$light-theme);
+  // @include mat.select-theme (theme.$light-theme) ;
+  // @include mat.button-theme (theme.$light-theme);
+  // @include mat.badge-theme (theme.$light-theme);
+  // @include mat.fab-theme (theme.$light-theme);
+  // @include mat.divider-theme (theme.$light-theme);
+  // @include mat.icon-button-theme(theme.$light-theme);
+
+  @include mat.typography-hierarchy(theme.$light-theme);
+  @include mat.color-variants-backwards-compatibility(theme.$light-theme);
+}
+
+$color-variants: (
+  primary: primary,
+  secondary: secondary,
+  tertiary: tertiary,
+  error: error
+);
+
+$components: (
+  badge: badge-color,
+  button: button-color,
+  checkbox: checkbox-color,
+  chips: chips-color,
+  datepicker: datepicker-color,
+  fab: fab-color,
+  form-field: form-field-color,
+  icon: icon-color,
+  option: option-color,
+  progress-bar: progress-bar-color,
+  progress-spinner: progress-spinner-color,
+  pseudo-checkbox: pseudo-checkbox-color,
+  radio: radio-color,
+  select: select-color,
+  slide-toggle: slide-toggle-color,
+  slider: slider-color,
+  stepper: stepper-color,
+  tabs: tabs-color,
+  // Additional components
+  // autocomplete: autocomplete-color,
+  // bottom-sheet: bottom-sheet-color,
+  // button-toggle: button-toggle-color,
+  // card: card-color,
+  // dialog: dialog-color,
+  // divider: divider-color,
+  // expansion-panel: expansion-panel-color,
+  // grid-list: grid-list-color,
+  // input: input-color,
+  // list: list-color,
+  // menu: menu-color,
+  // paginator: paginator-color,
+  // sidenav: sidenav-color,
+  // snack-bar: snack-bar-color,
+  // sort: sort-color,
+  // table: table-color,
+  // toolbar: toolbar-color,
+  // tooltip: tooltip-color,
+  // tree: tree-color
+);
+
+@mixin apply-component-color($component, $color) {
+  @if $component == badge-color {
+    @include mat.badge-color(theme.$light-theme, $color-variant: $color);
+  } @else if $component == button-color {
+    @include mat.button-color(theme.$light-theme, $color-variant: $color);
+  } @else if $component == checkbox-color {
+    @include mat.checkbox-color(theme.$light-theme, $color-variant: $color);
+  } @else if $component == chips-color {
+    @include mat.chips-color(theme.$light-theme, $color-variant: $color);
+  } @else if $component == datepicker-color {
+    @include mat.datepicker-color(theme.$light-theme, $color-variant: $color);
+  } @else if $component == fab-color and $color != error {
+    @include mat.fab-color(theme.$light-theme, $color-variant: $color);
+  } @else if $component == form-field-color {
+    @include mat.form-field-color(theme.$light-theme, $color-variant: $color);
+  } @else if $component == icon-color {
+    @include mat.icon-color(theme.$light-theme, $color-variant: $color);
+  } @else if $component == option-color {
+    @include mat.option-color(theme.$light-theme, $color-variant: $color);
+  } @else if $component == progress-bar-color {
+    @include mat.progress-bar-color(theme.$light-theme, $color-variant: $color);
+  } @else if $component == progress-spinner-color {
+    @include mat.progress-spinner-color(theme.$light-theme, $color-variant: $color);
+  } @else if $component == pseudo-checkbox-color {
+    @include mat.pseudo-checkbox-color(theme.$light-theme, $color-variant: $color);
+  } @else if $component == radio-color {
+    @include mat.radio-color(theme.$light-theme, $color-variant: $color);
+  } @else if $component == select-color {
+    @include mat.select-color(theme.$light-theme, $color-variant: $color);
+  } @else if $component == slide-toggle-color {
+    @include mat.slide-toggle-color(theme.$light-theme, $color-variant: $color);
+  } @else if $component == slider-color {
+    @include mat.slider-color(theme.$light-theme, $color-variant: $color);
+  } @else if $component == stepper-color {
+    @include mat.stepper-color(theme.$light-theme, $color-variant: $color);
+  } @else if $component == tabs-color {
+    @include mat.tabs-color(theme.$light-theme, $color-variant: $color);
+  }
+  // Add more else-if blocks for additional components
+}
+
+@each $component, $mixin-name in $components {
+  @each $variant, $color in $color-variants {
+    .#{$variant}-#{$component} {
+      @include apply-component-color($mixin-name, $color);
+    }
+  }
+}
+
+// Special case for surface icon
+.surface-icon {
+  @include mat.icon-color(theme.$light-theme, $color-variant: surface);
+}
+

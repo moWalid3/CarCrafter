@@ -1,1 +1,87 @@
-/* You can add global styles to this file, and also import other style files */
+@import './styles/material';
+
+
+$main: #43766c;
+$main-light: #CFE6E2;
+$alt: #B19470;
+$my-light: #F8FAE5;
+
+$transition: .2s;
+
+:root {
+  --mat-toolbar-container-text-color: #43766c;
+  --mat-menu-item-label-text-color: #43766c;
+  --mdc-plain-tooltip-container-color: #43766c;
+  --mdc-plain-tooltip-supporting-text-color: #fff;
+  // ----mat-app-text-color: #43766c;
+}
+
+body {
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  height: 100rem;
+}
+
+$colors: (
+  'main': $main,
+  'my-light': $my-light,
+  'alt': $alt,
+  'main-light': $main-light,
+);
+
+@each $name, $color in $colors {
+  .bg-#{$name} {
+    background-color: $color !important;
+  }
+
+  .text-#{$name} {
+    color: $color !important;
+  }
+}
+
+.transition {
+  transition: $transition;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba($color: black, $alpha: .75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.active-link {
+  background-color: #C4DDD9 !important;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: $main-light;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: $main;
+  border-radius: 10px;
+  border: 2px solid $main-light;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: darken($main, 10%);
+}
+
+::-webkit-scrollbar-thumb:active {
+  background-color: lighten($main, 10%);
+}
