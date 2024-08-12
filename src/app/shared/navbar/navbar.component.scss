@@ -2,12 +2,39 @@ img {
   height: 40px;
 }
 
-.spacer {
-  flex: 1 1 auto;
-}
-
 mat-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
   position: sticky;
   top: 0;
   z-index: 1000;
+}
+
+.navbar-links, .auth-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  mat-toolbar {
+    height: auto;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    row-gap: .5rem;
+    > a:has(img) {
+      width: 50%;
+    }
+    .auth-links {
+      order: 1;
+      width: 50%;
+      justify-content: end !important;
+    }
+    .navbar-links {
+      order: 5;
+      width: 100%;
+    }
+  }
 }

@@ -1,0 +1,44 @@
+<h3 class="main-title">Today's Car Deals</h3>
+
+@if (carOffers()) {
+
+<div class="row g-4">
+  @for (car of carOffers(); track car.id) {
+
+    <div class="col-md-6 col-xl-4">
+      <mat-card class="bg-white shadow">
+
+        <mat-card-content>
+          <div class="flex-between">
+            <h5 class="fw-medium mb-0">{{ car.brand }}</h5>
+            <span class="badge bg-alt fw-medium">NEW</span>
+          </div>
+          <small class="text-main">{{ car.name.split(' ').slice(1).join(" ") }}</small>
+
+          <ul class="list-unstyled mt-2 mb-0">
+            <li><mat-icon class="text-alt">done_all</mat-icon> {{ car.mileage }} miles per annum</li>
+            <li><mat-icon class="text-alt">done_all</mat-icon> {{ car.transmission }} transmission</li>
+            <li><mat-icon class="text-alt">done_all</mat-icon> Runs on {{ car.fuelType }}</li>
+          </ul>
+
+          <img mat-card-image class="img-fluid d-block mx-auto" [src]="car.imageUrl" [alt]="car.name">
+        </mat-card-content>
+
+        <mat-card-actions class="p-3 flex-between">
+          <span class="fw-semibold text-alt fs-5">
+            {{ car.price | currency:'USD':'symbol':'1.0-0' }}
+            <small class="fw-normal text-decoration-line-through">{{ car.price + 50000 | currency:'USD':'symbol':'1.0-0' }}</small>
+          </span>
+
+          <button mat-flat-button addToCart>
+            <mat-icon>add_shopping_cart</mat-icon>ADD TO CART
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  }
+</div>
+
+} @else {
+<div class="overlay"><mat-spinner></mat-spinner></div>
+}

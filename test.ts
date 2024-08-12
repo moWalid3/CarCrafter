@@ -599,4 +599,48 @@
     "transmission": "Automatic",
     "fuelType": "Gasoline"
   }
+];
+
+// todo --> new today ----------------------------------------------------
+
+[
+  {
+    "id": "110ea",
+    "name": "Toyota C-HR",
+    "imageUrl": "https://www.leaseloco.com/_next/image?url=https%3A%2F%2Fvehicle-images.leaseloco.com%2F2024%2F6%2F17%2F15-13%2F9996c6eb81daf64f6eb3980d30265eb1%2FPix%2FToyota%2FCHRHybrid%2F5SUV%20PremiereEdition%2Ftoyota_24chrhevpremieresu2b_sideview.png&w=384&q=75",
+    "brand": "Toyota",
+    "year": 2024,
+    "price": 244259,
+    "mileage": 8000,
+    "color": "Gold",
+    "transmission": "Automatic",
+    "fuelType": "Gasoline",
+    "description": "The Toyota C-HR is a reliable and fuel-efficient mid-size sedan that offers a comfortable ride and plenty of interior space. It's a great choice for families and commuters alike."
+  },
+  {
+    "id": "320fa",
+    "name": "Hyundai Kona Electric",
+    "imageUrl": "https://www.leaseloco.com/_next/image?url=https%3A%2F%2Fvehicle-images.leaseloco.com%2F2024%2F6%2F17%2F15-13%2F9996c6eb81daf64f6eb3980d30265eb1%2FPix%2FHyundai%2FKonaElectric%2F5SUV%20Advance%2Fhyundai_24konaevfeelsu2b_sideview.png&w=384&q=75",
+    "brand": "Hyundai",
+    "year": 2024,
+    "price": 354259,
+    "mileage": 5000,
+    "color": "Red",
+    "transmission": "Automatic",
+    "fuelType": "Gasoline",
+    "description": "The Hyundai Kona Electric is a high-performance sports car that delivers breathtaking acceleration and handling. It's known for its iconic design, powerful engine, and exhilarating driving experience."
+  },
+  {
+    "id": "alx23",
+    "name": "CUPRA Born 150kW",
+    "imageUrl": "https://www.leaseloco.com/_next/image?url=https%3A%2F%2Fvehicle-images.leaseloco.com%2F2024%2F6%2F17%2F15-13%2F9996c6eb81daf64f6eb3980d30265eb1%2FPix%2FCupra%2FBornEV%2F5Hatchback%20V1%2Fcupra_24bornevstandardhb1b_sideview.png&w=384&q=75",
+    "brand": "CUPRA",
+    "year": 2024,
+    "price": 441899,
+    "mileage": 6000,
+    "color": "White",
+    "transmission": "Automatic",
+    "fuelType": "Gasoline",
+    "description": "The CUPRA Born 150kW is an iconic sports car known for its timeless design, exceptional handling, and powerful engines. It offers a thrilling driving experience and a rich heritage."
+  }
 ]

@@ -1,5 +1,6 @@
 @import './styles/material';
-
+@import 'ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
+@import 'ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
 
 $main: #43766c;
 $main-light: #CFE6E2;
@@ -56,10 +57,33 @@ $colors: (
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 99999;
+}
+
+h3.main-title {
+  position: relative;
+  padding-bottom: .25rem;
+  margin-bottom: 1.5rem !important;
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 3rem;
+    height: .2rem;
+    border-radius: 50rem;
+    background-color: $main;
+  }
 }
 
 .active-link {
   background-color: #C4DDD9 !important;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 ::-webkit-scrollbar {

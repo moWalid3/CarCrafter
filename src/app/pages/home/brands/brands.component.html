@@ -1,0 +1,14 @@
+<h3 class="main-title">Brands</h3>
+<owl-carousel-o [options]="customOptions">
+  @for (brand of brands; track $index) {
+  <ng-template carouselSlide [id]="'brand' + $index">
+
+    <mat-card appearance="outlined" class="text-center" [owlRouterLink]="['cars']">
+      <mat-card-content>
+        <img [src]="'brands/' + brand + '.png'" alt="" />{{ brand }}
+      </mat-card-content>
+    </mat-card>
+
+  </ng-template>
+  }
+</owl-carousel-o>

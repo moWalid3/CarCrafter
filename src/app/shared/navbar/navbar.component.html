@@ -1,31 +1,31 @@
 <mat-toolbar class="mat-elevation-z4 bg-main-light">
   <a routerLink="/"><img src="logo.svg" alt="CarCrafter"></a>
 
-  <span class="spacer"></span>
-
-  <button mat-button routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">Home</button>
-  <button mat-button routerLink="/cars" routerLinkActive="active-link">Cars</button>
-  <button mat-button routerLink="/about" routerLinkActive="active-link">About</button>
-  <button mat-icon-button matTooltip="Cart" matBadge="0">
-    <mat-icon class="text-main">shopping_cart</mat-icon>
-  </button>
-
-  <span class="spacer"></span>
-
-  @if (true) {
-    <button mat-button routerLink="/register" routerLinkActive="active-link">Register</button>
-    <button mat-icon-button matTooltip="Login">
-      <mat-icon class="text-main">login</mat-icon>
+  <div class="navbar-links">
+    <button mat-button routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">Home</button>
+    <button mat-button routerLink="/cars" routerLinkActive="active-link">Cars</button>
+    <button mat-button routerLink="/about" routerLinkActive="active-link">About</button>
+    <button mat-icon-button matTooltip="Cart" matBadge="0">
+      <mat-icon class="text-main">shopping_cart</mat-icon>
     </button>
-  }@else {
-    <button mat-icon-button matTooltip="Logout">
-      <mat-icon class="text-main">logout</mat-icon>
-    </button>
-  }
+  </div>
 
-  <button [matMenuTriggerFor]="user" mat-icon-button matTooltip="User Info">
-    <mat-icon class="text-main">account_circle</mat-icon>
-  </button>
+  <div class="auth-links">
+    @if (true) {
+      <button mat-button routerLink="/register" routerLinkActive="active-link">Register</button>
+      <button mat-icon-button matTooltip="Login">
+        <mat-icon class="text-main">login</mat-icon>
+      </button>
+    }@else {
+      <button mat-icon-button matTooltip="Logout">
+        <mat-icon class="text-main">logout</mat-icon>
+      </button>
+    }
+
+    <button [matMenuTriggerFor]="user" mat-icon-button matTooltip="User Info">
+      <mat-icon class="text-main">account_circle</mat-icon>
+    </button>
+  </div>
 </mat-toolbar>
 
 <mat-menu class="bg-main-light text-main" #user="matMenu">

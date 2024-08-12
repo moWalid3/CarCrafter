@@ -1,0 +1,22 @@
+<owl-carousel-o [options]="customOptions">
+  @for (title of ['Mazda MX-30', 'Toyota C-HR', 'Peugeot E-208']; track $index) {
+    <ng-template carouselSlide [id]="'slide'+$index">
+
+      <div class="p-3 p-md-5 text-main-light box text-center text-md-start" [id]="'slide'+$index">
+        <h5 class="fw-bold mb-4 mt-3">
+          <mat-icon class="fs-3 text-alt">double_arrow</mat-icon>
+          New car arrival
+        </h5>
+        <h2 class="text-light mb-3 mb-md-4">{{title}}</h2>
+        <h6 class="fw- mb-4 d-none d-md-block">This car's technology is next level!</h6>
+        <div class="d-flex flex-column-reverse flex-md-row align-items-center align-items-md-end gap-3 gap-md-5">
+          <button mat-raised-button color="accent" routerLink="/cars" class="fs-2">Deal Details</button>
+          <div class="circle shadow-sm bg-main-light">
+            <span class="fw-bold text-main m-0">{{15 + ($index*10)}}% <br> off</span>
+          </div>
+        </div>
+      </div>
+
+    </ng-template>
+  }
+</owl-carousel-o>
