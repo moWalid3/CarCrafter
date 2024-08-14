@@ -11,3 +11,9 @@ export interface Car {
 	fuelType: string;
 	description: string;
 }
+
+export interface CartCar extends Car{
+  selectedColor: string,
+  quantity: number,
+  pickupDate: string,
+}

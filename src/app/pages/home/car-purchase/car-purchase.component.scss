@@ -1,0 +1,16 @@
+:host {
+  display: block;
+  margin-bottom: 4rem;
+  
+  .content {
+    position: absolute;
+    left: 3rem;
+    top: 3rem;
+    h4 {
+      letter-spacing: .15rem;
+    }
+    p {
+      line-height: 1.5;
+    }
+  }
+}

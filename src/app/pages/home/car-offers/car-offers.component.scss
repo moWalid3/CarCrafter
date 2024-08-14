@@ -1,13 +1,18 @@
-button {
-  line-height: 1.1;
-}
-li {
-  display: flex;
-  gap: .25rem;
-  align-items: center;
-}
-.flex-between {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+:host {
+  display: block;
+  margin-bottom: 4rem;
+
+  button {
+    line-height: 1.1;
+  }
+  li {
+    display: flex;
+    gap: .25rem;
+    align-items: center;
+  }
+  .flex-between {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
 }

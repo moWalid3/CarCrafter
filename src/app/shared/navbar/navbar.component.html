@@ -5,7 +5,7 @@
     <button mat-button routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">Home</button>
     <button mat-button routerLink="/cars" routerLinkActive="active-link">Cars</button>
     <button mat-button routerLink="/about" routerLinkActive="active-link">About</button>
-    <button mat-icon-button matTooltip="Cart" matBadge="0">
+    <button mat-icon-button matTooltip="Cart" [matBadge]="cartService.cartCars().length" routerLink="/cart" routerLinkActive="active-link">
       <mat-icon class="text-main">shopping_cart</mat-icon>
     </button>
   </div>

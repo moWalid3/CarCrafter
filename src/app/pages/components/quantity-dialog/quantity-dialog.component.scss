@@ -1,0 +1,11 @@
+mat-form-field {
+  width: 100%;
+}
+
+::ng-deep h2 {
+  margin-bottom: 1rem !important;
+}
+
+::ng-deep .cdk-overlay-container {
+  background-color: #00000052;
+}

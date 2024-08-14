@@ -30,7 +30,7 @@
             <small class="fw-normal text-decoration-line-through">{{ car.price + 50000 | currency:'USD':'symbol':'1.0-0' }}</small>
           </span>
 
-          <button mat-flat-button addToCart>
+          <button mat-flat-button [appAddToCart]="car">
             <mat-icon>add_shopping_cart</mat-icon>ADD TO CART
           </button>
         </mat-card-actions>

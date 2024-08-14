@@ -1,0 +1,19 @@
+.empty-cart {
+  width: 100%;
+  height: 90vh;
+  gap: 1rem;
+}
+
+table img {
+  width: 6rem;
+}
+
+table {
+  td, th {
+    text-align: center;
+  }
+  td {
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+  }
+}

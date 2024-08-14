@@ -18,6 +18,11 @@ export const routes: Routes = [
       import('./pages/about/about.component').then((com) => com.AboutComponent),
   },
   {
+    path: 'cart',
+    loadComponent: () =>
+      import('./pages/cart/cart.component').then((com) => com.CartComponent),
+  },
+  {
     path: 'register',
     loadComponent: () =>
       import('./pages/auth/register/register.component').then(

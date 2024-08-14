@@ -4,22 +4,28 @@
 
 $main: #43766c;
 $main-light: #CFE6E2;
+$main-black: #0d1816;
 $alt: #B19470;
 $my-light: #F8FAE5;
 
 $transition: .2s;
 
 :root {
-  --mat-toolbar-container-text-color: #43766c;
-  --mat-menu-item-label-text-color: #43766c;
-  --mdc-plain-tooltip-container-color: #43766c;
+  --main-color: #43766c;
+
+  --mat-toolbar-container-text-color: var(--main-color);
+  --mat-menu-item-label-text-color: var(--main-color);
+  --mdc-plain-tooltip-container-color: var(--main-color);
   --mdc-plain-tooltip-supporting-text-color: #fff;
+  --mat-select-panel-background-color: #ecf1f0;
+  --mat-option-selected-state-layer-color: #CFE6E2;
+  --mat-datepicker-calendar-container-background-color: #ecf1f0;
   // ----mat-app-text-color: #43766c;
 }
 
 body {
   font-family: Roboto, "Helvetica Neue", sans-serif;
-  height: 100rem;
+  color: $main-black !important;
 }
 
 $colors: (
@@ -57,7 +63,7 @@ $colors: (
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 99999;
+  z-index: 99990;
 }
 
 h3.main-title {
@@ -84,6 +90,40 @@ h3.main-title {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.success-toast {
+  .mdc-snackbar__surface {
+    background-color: #4caf50 !important;
+  }
+}
+
+.error-toast {
+  .mdc-snackbar__surface {
+    background-color: #f44336 !important;
+  }
+}
+
+.info-toast {
+  .mdc-snackbar__surface {
+    background-color: #2196f3 !important;
+  }
+}
+
+.success-toast, .error-toast, .info-toast {
+  .mdc-snackbar__label, .mat-mdc-button {
+    color: white !important;
+  }
+}
+
+.mat-mdc-table{
+  th {
+    background-color: $main-light !important;
+    color: $main;
+  }
+  td {
+    color: $main-black;
+  }
 }
 
 ::-webkit-scrollbar {

@@ -1,0 +1,14 @@
+<div class="counter-overlay"></div>
+<div class="container">
+  <div class="row">
+    @for (state of states(); track $index) {
+      <div class="col-3 text-center">
+        <div class="icon-circle flex-center">
+          <mat-icon class="mat-elevation-z3">{{ state.icon }}</mat-icon>
+        </div>
+        <h4>500</h4>
+        <h3>{{ state.title }}</h3>
+      </div>
+    }
+  </div>
+</div>

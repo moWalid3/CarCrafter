@@ -1,0 +1,38 @@
+:host {
+  display: block;
+  margin-bottom: 4rem;
+  padding: 2rem;
+  background-image: url('../../../../../public/shape.png');
+  background-position: center left;
+  background-size: cover;
+  position: relative;
+  .counter-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba($color: #43766c, $alpha: 0.6);
+    z-index: 1;
+  }
+  .row {
+    position: relative;
+    z-index: 2;
+  }
+  .icon-circle {
+    mat-icon {
+      height: 9rem;
+      width:  9rem;
+      border-radius: 50%;
+      border: .3rem solid #CFE6E2;
+      background-color: #0d1816;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .material-icons {
+      color: #CFE6E2;
+      font-size: 5.5rem;
+    }
+  }
+}
