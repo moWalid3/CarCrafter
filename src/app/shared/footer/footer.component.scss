@@ -1,0 +1,36 @@
+:host {
+  display: block;
+  padding-top: 3rem;
+  li, li a {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    margin-bottom: .5rem;
+  }
+  li a {
+    text-decoration: none;
+    transition: .2s;
+    gap: .25rem;
+    margin-bottom: .25rem;
+    text-transform: capitalize;
+    &:hover {
+      color: white !important;
+      padding-left: .5rem;
+    }
+  }
+
+  div > img {
+    height: 3.75rem;
+  }
+
+  a:has(img) {
+    img {
+      filter: grayscale(.5);
+      transition: .2s;
+      &:hover {
+        filter: grayscale(0);
+      }
+    }
+  }
+
+}

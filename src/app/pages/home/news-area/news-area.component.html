@@ -1,0 +1,17 @@
+<h3 class="main-title">Latest News</h3>
+
+<div class="row g-4">
+  @for (item of newsData; track $index) {
+    <div class="col-md-6 col-lg-4">
+      <div class="box rounded-4 mat-elevation-z3">
+        <img [src]="'news/news'+ ($index+1) +'.png'" class="img-fluid" alt="News Image">
+        <div class="p-4">
+          <p class="fs-5 fw-bold mb-2">{{ item.title }}</p>
+          <small class="text-alt">{{ item.date }}</small>
+          <p class="mt-2 text-muted">{{ item.description }}</p>
+          <a class="text-main">READ MORE <mat-icon color="primary" class="fs-5 mt-1">double_arrow</mat-icon></a>
+        </div>
+      </div>
+    </div>
+  }
+</div>

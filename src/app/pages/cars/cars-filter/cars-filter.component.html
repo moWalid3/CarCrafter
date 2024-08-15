@@ -1,0 +1,29 @@
+<div class="bg-white p-3 rounded-4 mb-4">
+  <h6 class="main-title">Search</h6>
+  <mat-form-field class="w-100">
+    <mat-label>Search</mat-label>
+    <input matInput #searchInp (input)="onSearch(searchInp.value)" />
+    <button mat-icon-button matSuffix disabled>
+      <mat-icon>search</mat-icon>
+    </button>
+  </mat-form-field>
+</div>
+
+<div class="bg-white p-3 rounded-4 mb-4">
+  <h6 class="main-title">Sort</h6>
+  <mat-form-field class="w-100">
+    <mat-select [(value)]="selectedOption">
+      @for (option of sortOptions(); track $index) {
+        <mat-option [value]="option.value" >{{option.viewValue}}</mat-option>
+      }
+    </mat-select>
+  </mat-form-field>
+</div>
+
+<div class="bg-white p-3 rounded-4">
+  <h6 class="main-title">Brands</h6>
+
+  @for (brand of carBrands(); track $index) {
+    <mat-checkbox [value]="brand" (change)="onBrandChange($event)" color="primary">{{brand}}</mat-checkbox>
+  }
+</div>

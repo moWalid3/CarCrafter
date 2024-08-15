@@ -8,7 +8,10 @@ import { RouterLink } from '@angular/router';
   standalone: true,
   imports: [MatIconModule, MatButtonModule, RouterLink],
   templateUrl: './about-area.component.html',
-  styleUrl: './about-area.component.scss'
+  styleUrl: './about-area.component.scss',
+  host: {
+    class: 'container'
+  }
 })
 export class AboutAreaComponent {
 

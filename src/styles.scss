@@ -33,6 +33,7 @@ $colors: (
   'my-light': $my-light,
   'alt': $alt,
   'main-light': $main-light,
+  'main-black': $main-black,
 );
 
 @each $name, $color in $colors {
@@ -66,7 +67,7 @@ $colors: (
   z-index: 99990;
 }
 
-h3.main-title {
+.main-title {
   position: relative;
   padding-bottom: .25rem;
   margin-bottom: 1.5rem !important;
@@ -125,6 +126,7 @@ h3.main-title {
     color: $main-black;
   }
 }
+
 
 ::-webkit-scrollbar {
   width: 8px;

@@ -1,1 +1,18 @@
-<p>cars works!</p>
+<img src="all-cars.jpg" class="img-fluid mb-5" alt="">
+<h2 class="text-center fw-bold mb-5">All Cars For Sale</h2>
+
+<div class="container">
+  <div class="row">
+    <div class="col-3">
+
+      <app-cars-filter (filteredCars)="onFilter($event)" />
+
+    </div>
+
+    <div class="col-9">
+
+      <app-show-cars [cars]="finalCars()" />
+
+    </div>
+  </div>
+</div>

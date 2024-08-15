@@ -8,6 +8,9 @@ import { RouterLink } from '@angular/router';
   imports: [MatButtonModule, RouterLink],
   templateUrl: './car-purchase.component.html',
   styleUrl: './car-purchase.component.scss',
+  host: {
+    class: 'container'
+  }
 })
 export class CarPurchaseComponent {
 

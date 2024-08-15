@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="row">
+
+    <div class="col-xl-6 mb-4">
+      <h1 class="text-white fw-bold">We are dedicated <span class="text-main">to provide</span> quality service</h1>
+      <p class="text-light mb-5">
+        Serving global agents, exporting to the world, and providing new energy agency support! There is a car source!
+        After-sales service is available! Minimum order for one sample. We've got the Export Qualification Certificate!
+      </p>
+      <img src="choose/blue_car.png" class="img-fluid" alt="Blue Car">
+    </div>
+
+    <div class="col-xl-6">
+      <div class="row g-4">
+
+        @for (title of ['Best Quality Cars', 'Certified Mechanics', 'Popular Brands', 'Reasonable Price']; track $index) {
+          <div class="col-sm-6" [class.move-down]="$index == 0 || $index == 2">
+            <div class="box bg-white rounded-3 py-4 px-3">
+
+              <div class="mb-3 d-flex justify-content-between">
+                <div class="bg-main p-3 rounded-circle">
+                  <img [src]="'choose/card'+($index+1)+'.png'" alt="">
+                </div>
+                <div class="number-text">0{{ $index + 1 }}</div>
+              </div>
+
+              <h6 class="fw-medium">{{ title }}</h6>
+              <p class="mb-0">
+                Find top-quality vehicles with unmatched reliability.
+                Each car is thoroughly inspected to ensure peak performance.
+              </p>
+            </div>
+          </div>
+        }
+
+      </div>
+    </div>
+
+  </div>
+</div>

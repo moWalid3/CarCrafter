@@ -17,6 +17,9 @@ import { MatCardModule } from '@angular/material/card';
   ],
   templateUrl: './brands.component.html',
   styleUrl: './brands.component.scss',
+  host: {
+    class: 'container'
+  }
 })
 export class BrandsComponent {
   brands = [

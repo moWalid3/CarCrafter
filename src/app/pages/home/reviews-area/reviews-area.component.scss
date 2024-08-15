@@ -1,0 +1,45 @@
+:host {
+  display: block;
+  margin-bottom: 4rem;
+  .main-title {
+    margin-bottom: 4.25rem !important;
+
+  }
+  .row {
+    row-gap: 4rem;
+  }
+  .box {
+    position: relative;
+    background-color: white;
+    padding: 1.5rem;
+    padding-top: 3.5rem;
+    z-index: 1;
+    picture {
+      display: block;
+      width: fit-content;
+      border-radius: 50%;
+      padding: 5px;
+      border: 5px solid;
+      border-color: transparent #43766c transparent #43766c;
+      z-index: 1;
+      img {
+        width: 5rem;
+        height: 5rem;
+        border-radius: 50%;
+      }
+      position: absolute;
+      top: calc(-2.5rem - 10px);
+      left: 1.5rem;
+    }
+    .mat-icon.quote {
+      position: absolute;
+      right: 0;
+      top: 25px;
+      width: fit-content;
+      height: fit-content;
+      color: #CFE6E2;
+      font-size: 8rem;
+      z-index: 0;
+    }
+  }
+}

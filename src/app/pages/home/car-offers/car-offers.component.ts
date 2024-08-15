@@ -27,6 +27,9 @@ import { AddToCartDirective } from '../../../core/directives/add-to-cart.directi
   ],
   templateUrl: './car-offers.component.html',
   styleUrl: './car-offers.component.scss',
+  host: {
+    class: 'container'
+  }
 })
 export class CarOffersComponent {
   private carsService = inject(CarsService);

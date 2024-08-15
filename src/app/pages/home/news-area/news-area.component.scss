@@ -1,0 +1,25 @@
+:host {
+  display: block;
+  padding-bottom: 4rem;
+
+  .box {
+    background-color: white;
+    overflow: hidden;
+    transition: .2s;
+    a {
+      transition: .2s;
+      text-decoration: none;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 2px;
+      cursor: pointer;
+    }
+    &:hover {
+      transform: translateY(-.25rem);
+      a {
+        gap: 5px;
+      }
+    }
+  }
+}

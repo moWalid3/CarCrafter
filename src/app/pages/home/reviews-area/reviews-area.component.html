@@ -1,0 +1,24 @@
+<h3 class="main-title">Independent Reviews</h3>
+
+<div class="row">
+  @for (customer of customers; track $index) {
+    <div class="col-sm-6 col-lg-3">
+      <div class="box rounded-4">
+        <picture>
+          <img [src]="'reviews/user'+ ($index+1) +'.jpeg'" alt="">
+        </picture>
+        <mat-icon class="quote">format_quote</mat-icon>
+        <div class="position-relative">
+          <h6 class="fw-medium mb-1">{{ customer }}</h6>
+          <p class="text-main fw-medium mb-3">Customer</p>
+          <p class="mb-3 text-black-50">
+            The site is easy to use and has very competitive deals that are better than on the providers own site. Wouldhighly recommend.
+          </p>
+          @for (item of [1, 2, 3, 4, 5]; track $index) {
+            <mat-icon color="primary">star</mat-icon>
+          }
+        </div>
+      </div>
+    </div>
+  }
+</div>

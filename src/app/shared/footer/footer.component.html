@@ -1,0 +1,51 @@
+<div class="container">
+  <div class="row text-white pb-5 gy-5">
+
+    <div class="col-sm-6 col-lg-4">
+      <h5 class="fw-bold mb-3">Contact CarCrafter</h5>
+      <ul class="list-unstyled text-white-50">
+        <li><mat-icon>phone_enabled</mat-icon>+1 555-123-4567</li>
+        <li><mat-icon>mail</mat-icon>example&#64;test.com</li>
+      </ul>
+      <mat-form-field class="w-75">
+        <mat-label>Enter your email</mat-label>
+        <input matInput type="email" placeholder="Example@example.com">
+      </mat-form-field>
+      <button mat-flat-button class="d-block">Subscribe</button>
+    </div>
+
+    <div class="col-sm-6 col-lg-4">
+      <h6 class="fw-bold mb-3">Quick Links</h6>
+      <ul class="list-unstyled ">
+        @for (link of ['', 'cars', 'about', 'cart']; track $index) {
+          <li>
+            <a [routerLink]="'/' + link" class="text-white-50">
+              <mat-icon>keyboard_double_arrow_right</mat-icon>{{ link == '' ? 'home' : link }}
+            </a>
+          </li>
+        }
+      </ul>
+    </div>
+
+    <div class="col-lg-4 text-white-50">
+      <img src="logo.svg" class="mb-3" alt="Logo">
+      <p>
+        We have a rich source of cars and provide you with the best quality car inport or export services at the best price.
+      </p>
+      <div class="list-unstyled ">
+        @for (site of ['facebook', 'instagram', 'linkedin', 'youtube']; track $index) {
+          <a [routerLink]="[]" class="text-white-50">
+            <img [src]="'media/'+ site + '.png'" [alt]="site" class="me-4">
+          </a>
+        }
+      </div>
+    </div>
+
+  </div>
+
+  <hr class="text-light m-0">
+
+  <p class="text-center py-4 text-white-50 mb-0">
+    Copyright © 2024 <a href="https://github.com/moWalid3" target="_blank" class="text-main fw-bold">MW</a>, all rights reserved.
+  </p>
+</div>

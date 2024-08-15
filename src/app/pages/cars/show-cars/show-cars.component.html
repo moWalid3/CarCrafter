@@ -1,0 +1,14 @@
+<div class="row g-3">
+
+  @for (car of cars(); track $index) {
+    <div class="col-3">
+
+      <div class="box bg-white">
+        <img [src]="car.imageUrl" class="img-fluid" alt="">
+        <p>{{ car.brand }}</p>
+      </div>
+
+    </div>
+  }
+
+</div>
