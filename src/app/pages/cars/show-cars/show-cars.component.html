@@ -1,14 +1,20 @@
-<div class="row g-3">
+@defer (on viewport) {
 
-  @for (car of cars(); track $index) {
-    <div class="col-3">
+  <div class="row g-3">
+    @for (car of cars(); track $index) {
+      <div class="col-4">
+        <div class="box bg-white rounded-4">
+          <img [src]="car.imageUrl" class="img-fluid p-3" alt="">
+          <p>{{ car.brand }}</p>
+          <p>{{car.year}}</p>
+          <h3>{{car.price}}</h3>
+        </div>
 
-      <div class="box bg-white">
-        <img [src]="car.imageUrl" class="img-fluid" alt="">
-        <p>{{ car.brand }}</p>
       </div>
+    }
 
-    </div>
-  }
+  </div>
 
-</div>
+} @placeholder(minimum  1000ms) {
+  <div class="flex-center mt-5"><mat-spinner></mat-spinner></div>
+}

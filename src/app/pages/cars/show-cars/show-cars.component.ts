@@ -1,13 +1,14 @@
-import { Component, input } from '@angular/core';
-import { Car } from '../../../core/models/car.model';
+import { Component, inject, input } from '@angular/core';
+import { CarsService } from '../../../core/services/cars.service';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @Component({
   selector: 'app-show-cars',
   standalone: true,
-  imports: [],
+  imports: [MatProgressSpinnerModule],
   templateUrl: './show-cars.component.html',
   styleUrl: './show-cars.component.scss'
 })
 export class ShowCarsComponent {
-  cars = input.required<Car[]>();
+  cars = inject(CarsService).finalCars;
 }

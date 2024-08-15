@@ -1,5 +1,4 @@
-import { Component, inject, Input, OnInit } from '@angular/core';
-import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { Component, inject } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { RouterLink } from '@angular/router';
 import { CarsService } from '../../../core/services/cars.service';
