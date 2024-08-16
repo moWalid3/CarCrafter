@@ -1,19 +1,55 @@
 @defer (on viewport) {
 
-  <div class="row g-3">
-    @for (car of cars(); track $index) {
-      <div class="col-4">
-        <div class="box bg-white rounded-4">
-          <img [src]="car.imageUrl" class="img-fluid p-3" alt="">
-          <p>{{ car.brand }}</p>
-          <p>{{car.year}}</p>
-          <h3>{{car.price}}</h3>
-        </div>
+  <div class="row g-3 mb-5">
 
+    @for (car of paginatedCars(); track $index) {
+      <div class="col-lg-6 col-xl-4">
+        <div class="box bg-white rounded-4">
+
+          <div class="badge bg-alt">{{ car.brand }}</div>
+          <img [src]="car.imageUrl" class="img-fluid p-3 d-block mx-auto" alt="">
+
+          <div class="px-3 pb-3">
+            <h6 class="fw-medium fs-5 mb-2">{{ car.name }}</h6>
+
+            <div class="flex-middle mb-3">
+              @for (item of [1, 2, 3, 4, 5]; track $index) {
+                <mat-icon class="text-main fs-4">star</mat-icon>
+              }
+              <span class="d-inline-block ms-1 text-muted">5.0 (58.5k Review)</span>
+            </div>
+
+            <div class="row mb-3 pt-1">
+              <span class="col-6 flex-middle gap-1 text-muted"><mat-icon class="text-main">memory</mat-icon>{{ car.transmission }}</span>
+              <span class="col-6 flex-middle gap-1 text-muted"><mat-icon class="text-main">cell_tower</mat-icon>{{ car.mileage }}</span>
+            </div>
+            <div class="row">
+              <span class="col-6 flex-middle gap-1 text-muted"><mat-icon class="text-main">directions_car</mat-icon>Model {{ car.year }}</span>
+              <span class="col-6 flex-middle gap-1 text-muted"><mat-icon class="text-main">local_gas_station</mat-icon>{{ car.fuelType }}</span>
+            </div>
+
+            <hr class="text-main mt-4 mb-3">
+
+            <div class="flex-middle justify-content-between">
+              <h5 class="text-alt mb-0 fs-5 fw-bold">{{ car.price | currency:'USD':'symbol':'1.0-0' }}</h5>
+              <div class="flex-middle">
+                <button mat-icon-button [appAddToCart]="car" color="primary" matTooltip="Add To Cart">
+                  <mat-icon>add_shopping_cart</mat-icon>
+                </button>
+                <button mat-flat-button [routerLink]="['/cars', car.id]">Details</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
       </div>
     }
 
   </div>
+
+  <mat-paginator [length]="cars().length" [pageSize]="30" [pageSizeOptions]="[10, 30, 50, 100]"
+                  (page)="onPageChange($event)"
+  ></mat-paginator>
 
 } @placeholder(minimum  1000ms) {
   <div class="flex-center mt-5"><mat-spinner></mat-spinner></div>

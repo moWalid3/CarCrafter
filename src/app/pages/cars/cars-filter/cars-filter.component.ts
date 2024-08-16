@@ -1,4 +1,4 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, inject, OnDestroy, signal } from '@angular/core';
 import {MatButtonModule} from '@angular/material/button';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatIconModule} from '@angular/material/icon';
@@ -16,7 +16,7 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './cars-filter.component.html',
   styleUrl: './cars-filter.component.scss'
 })
-export class CarsFilterComponent {
+export class CarsFilterComponent implements OnDestroy{
   private carsService = inject(CarsService);
   private debounceTimeout: any;
   carBrands = this.carsService.carBrands;
@@ -49,6 +49,14 @@ export class CarsFilterComponent {
       this.selectedBrands.update(oldBrands => [...oldBrands, brandValue]);
     else
       this.selectedBrands.update(oldBrands => oldBrands.filter(brand => brand !== brandValue));
+
+    this.carsService.filtration(this.searchTerm(), this.selectedOption(), this.selectedBrands());
+  }
+
+  ngOnDestroy(): void {
+    this.searchTerm.set('');
+    this.selectedOption.set('default');
+    this.selectedBrands.set([]);
 
     this.carsService.filtration(this.searchTerm(), this.selectedOption(), this.selectedBrands());
   }

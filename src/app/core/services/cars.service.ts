@@ -25,7 +25,7 @@ export class CarsService {
     effect(() => {
       if(this.allCars()) {
         setTimeout(() => {
-          this.filteredCars.set(this.allCars().sort((a, b) => a.id > b.id ? 1 : -1));
+          this.filteredCars.set(this.allCars().sort((a, b) => b.id > a.id ? 1 : -1));
         }, 0);
       }
     })
@@ -71,7 +71,7 @@ export class CarsService {
     this.filteredCars.update(oldCars => {
       let defaultCars: Car[] = [];
 
-      this.allCars().sort((a, b) => a.id > b.id ? 1 : -1).forEach(car => {
+      this.allCars().sort((a, b) => b.id > a.id ? 1 : -1).forEach(car => {
         if(oldCars.find(oldCar => oldCar.id === car.id))
           defaultCars.push(car);
       })

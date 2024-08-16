@@ -1,10 +1,25 @@
 .box {
+  position: relative;
   img {
     transition: .2s;
   }
   &:hover {
     img {
-      transform: scale(1.05) rotate(-1deg);
+      transform: scale(1.05) rotate(-.5deg);
     }
   }
+  .badge {
+    position: absolute;
+    left: 1rem;
+    top: 1rem;
+    font-weight: 500;
+  }
+}
+.flex-middle {
+  display: flex;
+  align-items: center;
+}
+
+::ng-deep .mat-mdc-paginator-container  {
+  justify-content: center !important;
 }

@@ -13,6 +13,11 @@ export const routes: Routes = [
       import('./pages/cars/cars.component').then((com) => com.CarsComponent),
   },
   {
+    path: 'cars/:id',
+    loadComponent: () =>
+      import('./pages/car-details/car-details.component').then((com) => com.CarDetailsComponent),
+  },
+  {
     path: 'about',
     loadComponent: () =>
       import('./pages/about/about.component').then((com) => com.AboutComponent),
