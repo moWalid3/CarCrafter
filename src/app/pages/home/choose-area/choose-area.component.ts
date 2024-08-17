@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
+import { VisibilityDirective } from '../../../core/directives/visibility.directive';
 
 @Component({
   selector: 'app-choose-area',
   standalone: true,
-  imports: [],
+  imports: [VisibilityDirective],
   templateUrl: './choose-area.component.html',
   styleUrl: './choose-area.component.scss'
 })

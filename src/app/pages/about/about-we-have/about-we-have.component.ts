@@ -1,6 +1,7 @@
 import { NgClass } from '@angular/common';
 import { Component } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
+import { bounceAnimation, slideInAnimation } from '../../../core/animations/animation';
 
 @Component({
   selector: 'app-about-we-have',
@@ -8,6 +9,7 @@ import { MatIconModule } from '@angular/material/icon';
   imports: [MatIconModule, NgClass],
   templateUrl: './about-we-have.component.html',
   styleUrl: './about-we-have.component.scss',
+  animations: [bounceAnimation, slideInAnimation],
   host: {
     class: 'bg-main-light'
   }

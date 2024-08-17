@@ -6,7 +6,7 @@
   @for (car of carOffers(); track car.id) {
 
     <div class="col-md-6 col-xl-4">
-      <mat-card class="bg-white shadow">
+      <mat-card observeVisibility [delay]="($index * 50)" class="bg-white shadow">
 
         <mat-card-content>
           <div class="flex-between">

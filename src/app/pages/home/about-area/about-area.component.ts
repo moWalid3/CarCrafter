@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { RouterLink } from '@angular/router';
+import { bounceAnimation } from '../../../core/animations/animation';
 
 @Component({
   selector: 'app-about-area',
@@ -9,6 +10,7 @@ import { RouterLink } from '@angular/router';
   imports: [MatIconModule, MatButtonModule, RouterLink],
   templateUrl: './about-area.component.html',
   styleUrl: './about-area.component.scss',
+  animations: [bounceAnimation],
   host: {
     class: 'container'
   }

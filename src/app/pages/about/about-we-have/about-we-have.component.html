@@ -3,17 +3,21 @@
   <h2>We Have Everything You Want</h2>
 
   @for (item of data; track $index) {
+    @defer (on viewport) {
     <div class="row g-4 flex-column-reverse flex-lg-row" [ngClass]="{'flex-lg-row-reverse': $odd}">
-      <div class="col-lg-6">
+      <div @slideIn class="col-lg-6">
         <h3 class=" mb-5">{{ item.title }}</h3>
         @for (text of item.content; track $index) {
           <h4 class="text-main mb-4 flex-center"><mat-icon color="accent">check_box</mat-icon>{{ text }}</h4>
         }
       </div>
       <div class="col-lg-6">
-        <img [src]="'about/'+($index+1)+'.png'" class="img-fluid rounded-3 mat-elevation-z10" alt="">
+          <img @bounce [src]="'about/'+($index+1)+'.png'" class="img-fluid rounded-3 mat-elevation-z10" alt="">
+        </div>
       </div>
-    </div>
+    }@placeholder {
+      <span>We Have Everything You Want</span>
+    }
   }
 </div>
 

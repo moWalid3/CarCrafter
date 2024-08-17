@@ -1,5 +1,5 @@
 <h3 class="main-title">Brands</h3>
-<owl-carousel-o [options]="customOptions">
+<owl-carousel-o observeVisibility [options]="customOptions">
   @for (brand of brands; track $index) {
   <ng-template carouselSlide [id]="'brand' + $index">
 

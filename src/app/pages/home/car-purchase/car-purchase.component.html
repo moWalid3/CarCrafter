@@ -1,5 +1,5 @@
 <div class="row g-2">
-  <div class="col-md-6 position-relative">
+  <div observeVisibility class="col-md-6 position-relative">
     <img src="sales/1.png" class="img-fluid mat-elevation-z10 rounded-2" alt="">
     <div class="content text-white">
       <h4 class="fw-bold">Electric Cars</h4>
@@ -9,7 +9,7 @@
       <button mat-flat-button color="accent" routerLink="/cars">VIEW CARS</button>
     </div>
   </div>
-  <div class="col-md-6 position-relative">
+  <div observeVisibility [delay]="100" class="col-md-6 position-relative">
     <img src="sales/2.png" class="img-fluid mat-elevation-z10 rounded-2" alt="">
     <div class="content text-white">
       <h4 class="fw-bold">Business Cars</h4>

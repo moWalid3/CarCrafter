@@ -10,6 +10,7 @@ import { CurrencyPipe } from '@angular/common';
 import { MatList, MatListItem } from '@angular/material/list';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { AddToCartDirective } from '../../../core/directives/add-to-cart.directive';
+import { VisibilityDirective } from '../../../core/directives/visibility.directive';
 
 @Component({
   selector: 'app-car-offers',
@@ -22,7 +23,7 @@ import { AddToCartDirective } from '../../../core/directives/add-to-cart.directi
     MatIconModule,
     CurrencyPipe,
     MatList, MatListItem,
-    MatProgressSpinnerModule, AddToCartDirective
+    MatProgressSpinnerModule, AddToCartDirective, VisibilityDirective
   ],
   templateUrl: './car-offers.component.html',
   styleUrl: './car-offers.component.scss',

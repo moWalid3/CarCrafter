@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
+import { VisibilityDirective } from '../../../core/directives/visibility.directive';
 
 @Component({
   selector: 'app-news-area',
   standalone: true,
-  imports: [MatIconModule],
+  imports: [MatIconModule, VisibilityDirective],
   templateUrl: './news-area.component.html',
   styleUrl: './news-area.component.scss',
   host: {

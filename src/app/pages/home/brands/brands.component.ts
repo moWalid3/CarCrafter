@@ -4,6 +4,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { RouterLink } from '@angular/router';
 import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
 import { MatCardModule } from '@angular/material/card';
+import { VisibilityDirective } from '../../../core/directives/visibility.directive';
 
 @Component({
   selector: 'app-brands',
@@ -14,6 +15,7 @@ import { MatCardModule } from '@angular/material/card';
     RouterLink,
     MatIconModule,
     MatCardModule,
+    VisibilityDirective
   ],
   templateUrl: './brands.component.html',
   styleUrl: './brands.component.scss',

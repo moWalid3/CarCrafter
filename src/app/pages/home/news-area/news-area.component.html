@@ -2,7 +2,7 @@
 
 <div class="row g-4">
   @for (item of newsData; track $index) {
-    <div class="col-md-6 col-lg-4">
+    <div observeVisibility [delay]="($index * 100)" class="col-md-6 col-lg-4">
       <div class="box rounded-4 mat-elevation-z3">
         <img [src]="'news/news'+ ($index+1) +'.png'" class="img-fluid" alt="News Image">
         <div class="p-4">

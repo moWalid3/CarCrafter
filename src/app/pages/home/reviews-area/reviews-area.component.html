@@ -2,7 +2,7 @@
 
 <div class="row">
   @for (customer of customers; track $index) {
-    <div class="col-sm-6 col-lg-3">
+    <div observeVisibility [delay]="($index * 50)" class="col-sm-6 col-lg-3">
       <div class="box rounded-4">
         <picture>
           <img [src]="'reviews/user'+ ($index+1) +'.jpeg'" alt="">

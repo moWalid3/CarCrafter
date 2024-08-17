@@ -14,7 +14,7 @@
       <div class="row g-4">
 
         @for (title of ['Best Quality Cars', 'Certified Mechanics', 'Popular Brands', 'Reasonable Price']; track $index) {
-          <div class="col-sm-6" [class.move-down]="$index == 0 || $index == 2">
+          <div observeVisibility class="col-sm-6" [class.move-down]="$index == 0 || $index == 2">
             <div class="box bg-white rounded-3 py-4 px-3">
 
               <div class="mb-3 d-flex justify-content-between">
