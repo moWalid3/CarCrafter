@@ -1,0 +1,27 @@
+:host {
+  display: block;
+  li {
+    gap: .25rem;
+    margin-bottom: .75rem;
+  }
+  mat-icon {
+    margin-right: .25rem;
+  }
+  img {
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+  }
+  svg {
+    margin-top: .5rem;
+    margin-right: .5rem;
+    width: 1.2rem;
+    height: 1.2rem;
+    color: red;
+    cursor: pointer;
+  }
+
+  mat-form-field {
+    width: 100%;
+  }
+}

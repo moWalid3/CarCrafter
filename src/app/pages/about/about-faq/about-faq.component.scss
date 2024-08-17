@@ -1,0 +1,47 @@
+:host {
+  display: block;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  h2 {
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+}
+
+.accordion {
+  display: block;
+}
+
+.accordion-item {
+  display: block;
+  border: solid 1px transparent;
+}
+
+.accordion-item + .accordion-item {
+  border-top: none;
+}
+
+.accordion-item-header {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.accordion-item-description {
+  font-size: 0.85em;
+}
+
+.accordion-item-header,
+.accordion-item-body {
+  padding: 1rem;
+}
+
+.accordion-item-header:hover {
+  cursor: pointer;
+}
+
+.accordion-item-body {
+  cursor: auto;
+}

@@ -1,0 +1,21 @@
+:host {
+  display: block;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  h3 {
+    font-weight: bold;
+  }
+  .my-progress {
+    margin-bottom: 1rem;
+    span {
+      display: block;
+      color: white;
+      text-align: end;
+      padding-right: .5rem;
+      padding-left: .25rem;
+    }
+  }
+  .my-progress:last-of-type {
+    margin-bottom: 0;
+  }
+}

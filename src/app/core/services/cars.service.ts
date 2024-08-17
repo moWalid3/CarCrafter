@@ -35,6 +35,10 @@ export class CarsService {
     return this.httpClient.get<Car[]>('c/fc8f-f7f2-4c9e-a550');
   }
 
+  getCarById(id: string) {
+    return this.allCars().find(car => car.id === id);
+  }
+
   getCarOffers() {
     return this.httpClient.get<Car[]>('c/4bbf-4125-4467-8ab5');
   }

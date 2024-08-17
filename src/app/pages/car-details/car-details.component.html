@@ -1,1 +1,28 @@
-<p>car-details works!</p>
+@defer  {
+@if (!notfoundCar() && car()) {
+
+  <div @slideIn class="row">
+
+    <div class="col-lg-8 col-xl-9">
+
+      <app-car-details-slider [car]="car()!" />
+      <div class="d-block d-lg-none">
+        <app-car-details-main-info [car]="car()!" />
+      </div>
+      <app-car-details-alt-info [car]="car()!" />
+
+    </div>
+
+    <div class="col-lg-4 col-xl-3 d-none d-lg-block">
+      <app-car-details-main-info [car]="car()!" />
+    </div>
+
+  </div>
+
+}@else {
+  <h1 @slideIn class="text-center my-5 pb-5">Car Not Found <br> Select A Correct Car</h1>
+}
+} @placeholder(minimum 1s) {
+  <img class="position-fixed top-0 start-0 bottom-0 end-0 w-100 h-100 z-3" src="black_car.png" />
+  <div class="overlay"><mat-spinner></mat-spinner></div>
+}

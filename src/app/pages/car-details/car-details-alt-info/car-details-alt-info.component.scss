@@ -1,0 +1,29 @@
+:host {
+  display: block;
+  img {
+    width: 5rem;
+    height: 5rem;
+    overflow: hidden;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  .review-content {
+    width: calc(100% - 7rem);
+  }
+
+  mat-form-field {
+    width: calc(50% - .5rem);
+  }
+
+  .vehicle-area {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    mat-icon {
+      width: 1.5rem;
+    }
+    span {
+      width: calc(100% - 2rem);
+    }
+  }
+}

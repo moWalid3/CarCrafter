@@ -1,0 +1,12 @@
+:host {
+  display: block;
+  .flex-middle {
+    display: flex;
+    align-items: center;
+    gap: .25rem;
+  }
+  img {
+    height: 30rem;
+    object-fit: cover;
+  }
+}

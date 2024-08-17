@@ -1,0 +1,38 @@
+:host {
+  display: block;
+  position: relative;
+  video {
+    width: 100%;
+    @media (max-width: 575.98px) {
+      height: 24rem;
+    }
+  }
+  div {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    h2 {
+      font-weight: 900;
+      font-size: 5rem;
+      font-style: italic;
+      line-height: 1;
+      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.56);
+      @media (max-width: 767.98px) {
+        font-size: 3rem;
+
+      }
+    }
+    button {
+      margin-left: .5rem;
+      margin-right: .5rem;
+    }
+  }
+  em {
+    position: absolute;
+    bottom: 3rem;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}

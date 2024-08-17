@@ -52,7 +52,7 @@ export class QuantityDialogComponent {
 
   save() {
     this.dialogRef.close(this.carForm.value);
-    this.toaster.showToaster(`Car Added to cart successfully`)
+    this.toaster.showToaster(`Car added to cart successfully`)
   }
 }
 

@@ -1,0 +1,60 @@
+<div class="p-4 bg-white mb-4 rounded-4">
+  <h6 class="fw-medium fs-4 mb-3">Description</h6>
+  <p class="text-muted mb-4 pe-md-5">{{ car().description }} The latest in-car technology includes an intuitive infotainment system with a large touchscreen display, seamless smartphone integration, and voice-activated controls. Compatibility with Apple CarPlay and Android Auto allows easy access to apps, navigation, and media. A premium sound system delivers crystal-clear audio, and built-in Bluetooth connectivity ensures hands-free communication and audio streaming.</p>
+  <h6 class="fw-medium fs-4 mb-3">Car Features</h6>
+  <div class="row mb-3">
+    @for (title of features; track $index) {
+      <div class="col-md-4 flex-middle text-muted gap-2 mb-3">
+        <mat-icon color="primary">verified</mat-icon>{{ title }}
+      </div>
+    }
+  </div>
+  <h6 class="fw-medium fs-4 mb-3">Vehicle History</h6>
+  @for (title of history; track $index) {
+    <div class="vehicle-area text-muted gap-2 mb-3 pe-md-5">
+      <mat-icon color="primary">verified</mat-icon><span>{{ title }}</span>
+    </div>
+  }
+</div>
+
+<div class="p-4 bg-white mb-4 rounded-4">
+  <h6 class="fw-medium fs-4 mb-4">Reviews ({{reviews().length}})</h6>
+  @for (review of reviews(); track $index) {
+    <div class="d-flex mb-4">
+      <img [src]="review.img" [alt]="review.name" class="me-4">
+      <div class="review-content">
+        <h6 class="fw-medium fs-5 mb-1">{{ review.name }}</h6>
+        <p class="flex-middle gap-1 fs-6 text-main"><mat-icon>schedule</mat-icon> {{review.date | date}}</p>
+        <p class="text-muted pe-md-5 mb-1">{{ review.text }}</p>
+        <button mat-button><mat-icon>reply</mat-icon> Reply</button>
+      </div>
+    </div>
+  }
+
+  <div class="p-4 mt-5 rounded-4" style="background-color: #ECF1F0;">
+    <h6 class="fw-medium fs-4 mb-4">Leave A Review</h6>
+
+    <form  (ngSubmit)="onSubmit()">
+      <mat-form-field appearance="outline" class="me-3">
+        <mat-label>Your Name</mat-label>
+        <input matInput type="text" name="name" [(ngModel)]="name" required>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Your Email</mat-label>
+        <input matInput type="email" name="email" ngModel required email>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="w-100">
+        <mat-label>Your Comment</mat-label>
+        <textarea matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize"
+        cdkAutosizeMinRows="3" cdkAutosizeMaxRows="5"
+        [(ngModel)]="text" required name="comment"
+        ></textarea>
+      </mat-form-field>
+
+      <button mat-flat-button type="submit"><mat-icon>send</mat-icon>Submit Review</button>
+    </form>
+  </div>
+
+</div>

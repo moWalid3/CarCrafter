@@ -1,0 +1,24 @@
+
+<h5 class="fw-medium mb-2">{{ car().name}}</h5>
+<div class="d-flex flex-column flex-md-row gap-3 mb-4">
+  <span class="flex-middle text-muted">
+    <mat-icon color="primary">schedule</mat-icon>
+    Listed On: {{ listedOn() | date:'fullDate' }}
+  </span>
+  <span class="flex-middle text-muted">
+    <mat-icon color="primary">visibility</mat-icon>
+    Views: {{ views()}}
+  </span>
+</div>
+
+<owl-carousel-o [options]="customOptions">
+  <ng-template carouselSlide id="slide4">
+    <img [src]="car().imageUrl" class="img-fluid rounded-4 object-fit-contain" alt="View Car Inside">
+  </ng-template>
+
+  @for (num of [1, 2, 3]; track $index) {
+    <ng-template carouselSlide [id]="'slide'+$index">
+      <img [src]="'car_details/'+num+'.png'" class="img-fluid rounded-4" alt="View Car Inside">
+    </ng-template>
+  }
+</owl-carousel-o>

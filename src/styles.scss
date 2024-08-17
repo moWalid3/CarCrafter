@@ -93,6 +93,11 @@ $colors: (
   align-items: center;
 }
 
+.flex-middle {
+  display: flex;
+  align-items: center;
+}
+
 .success-toast {
   .mdc-snackbar__surface {
     background-color: #4caf50 !important;

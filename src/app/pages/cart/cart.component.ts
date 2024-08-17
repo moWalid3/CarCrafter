@@ -6,15 +6,18 @@ import { MatIconModule } from '@angular/material/icon';
 import { CurrencyPipe, DatePipe } from '@angular/common';
 import {MatPaginator, MatPaginatorModule} from '@angular/material/paginator';
 import { CartCar } from '../../core/models/car.model';
+import { slideInAnimation } from '../../core/animations/animation';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @Component({
   selector: 'app-cart',
   standalone: true,
   imports: [MatTableModule,
-    MatButtonModule, MatIconModule, CurrencyPipe, DatePipe, MatPaginatorModule
+    MatButtonModule, MatIconModule, CurrencyPipe, DatePipe, MatPaginatorModule, MatProgressSpinnerModule
   ],
   templateUrl: './cart.component.html',
-  styleUrl: './cart.component.scss'
+  styleUrl: './cart.component.scss',
+  animations: [slideInAnimation],
 })
 export class CartComponent implements AfterViewInit{
   private cartService = inject(CartService);

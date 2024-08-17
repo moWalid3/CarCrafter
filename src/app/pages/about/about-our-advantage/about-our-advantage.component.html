@@ -1,0 +1,15 @@
+<h2>Our Advantage</h2>
+<p class="fs-5 text-muted mb-5">We Provide The Highest Quality Products And One-stop After-sales Service.</p>
+
+<div class="row g-3">
+
+  @for (adv of advantages; track $index) {
+    <div class="col-md-6 col-lg-4 col-xxl-3">
+      <div observeVisibility class="box rounded-3">
+        <span class="bg-main-light rounded-2"><mat-icon color="primary">{{ adv.icon }}</mat-icon></span>
+        <p>{{ adv.text }}</p>
+      </div>
+    </div>
+  }
+
+</div>

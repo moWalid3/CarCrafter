@@ -1,0 +1,19 @@
+<div class="container">
+  <h2>Excellent Staff</h2>
+  <p>
+    At Guangcaiauto, we believe our employees are our greatest asset. We have a
+    dedicated <br class="d-none d-md-block"> team of professionals with rich experience, passion and commitment
+    to provide <br class="d-none d-md-block"> outstanding services and innovative solutions to each of our customers.
+  </p>
+
+  <owl-carousel-o [options]="customOptions">
+    @for (staff of staffData; track $index) {
+      <ng-template carouselSlide [id]="'slide'+$index">
+        <img [src]="'about/staff'+($index+1)+'.jpg'" alt="View Car Inside">
+        <q class="text-main">{{staff.text}}</q>
+        <h4 class="text-main">{{ staff.name }}</h4>
+        <p class="text-alt fs-5 fw-medium">{{ staff.position }}</p>
+      </ng-template>
+    }
+  </owl-carousel-o>
+</div>
