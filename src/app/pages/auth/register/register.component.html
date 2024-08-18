@@ -1,1 +1,116 @@
-<p>register works!</p>
+
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="container">
+  <mat-card class="shipping-card">
+
+    <mat-card-header class="justify-content-center">
+      <mat-card-title><h2 class="main-title">Register</h2></mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content class="row gx-3 gy-1">
+
+      <mat-form-field class="col-sm-6" appearance="outline">
+        <mat-label>Username</mat-label>
+        <input matInput placeholder="Username..." formControlName="username" />
+        @if (registerForm.controls['username'].hasError('required')) {
+        <mat-error>Username is <strong>required</strong></mat-error>
+        }@else if (registerForm.controls['username'].hasError('minlength')) {
+        <mat-error>Username must have a minimum of 3 characters.</mat-error>
+        }
+      </mat-form-field>
+
+      <mat-form-field class="col-sm-6" appearance="outline">
+        <mat-label>Email</mat-label>
+        <input matInput placeholder="ex@gmail.com" type="email" formControlName="email" />
+        @if (registerForm.controls['email'].hasError('required')) {
+        <mat-error>Email is <strong>required</strong></mat-error>
+        }@else if (registerForm.controls['email'].hasError('pattern')) {
+        <mat-error>Enter a valid email.</mat-error>
+        }
+      </mat-form-field>
+
+      <mat-form-field class="col-sm-6" appearance="outline">
+        <mat-label>Password</mat-label>
+        <input matInput [type]="passwordIconHide() ? 'password' : 'text'" formControlName="password" />
+        <button mat-icon-button matSuffix (click)="onClickAtEyeIcon($event, 'password')" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="passwordIconHide()">
+          <mat-icon>{{passwordIconHide() ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+        @if (registerForm.controls['password'].hasError('required')) {
+        <mat-error>Password is <strong>required</strong></mat-error>
+        }@else if (registerForm.controls['password'].hasError('minlength')) {
+        <mat-error>Password must have a minimum of 6 characters.</mat-error>
+        }
+      </mat-form-field>
+
+      <mat-form-field class="col-sm-6" appearance="outline">
+        <mat-label>RePassword</mat-label>
+        <input matInput [type]="rePasswordIconHide() ? 'password' : 'text'" formControlName="rePassword" />
+        <button mat-icon-button matSuffix (click)="onClickAtEyeIcon($event, 'rePassword')" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="rePasswordIconHide()">
+          <mat-icon>{{rePasswordIconHide() ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+        @if (registerForm.controls['rePassword'].hasError('required')) {
+        <mat-error>RePassword is <strong>required</strong></mat-error>
+        }@else if (registerForm.controls['rePassword'].hasError('matchPassword')) {
+        <mat-error>Password and rePassword don't match.</mat-error>
+        }
+      </mat-form-field>
+
+      <mat-form-field class="col-sm-6" appearance="outline">
+        <mat-select placeholder="Gender" formControlName="gender">
+          <mat-option value="male">Male</mat-option>
+          <mat-option value="female">Female</mat-option>
+        </mat-select>
+        @if (registerForm.controls['gender'].hasError('required')) {
+        <mat-error>Gender is <strong>required</strong></mat-error>
+        }
+      </mat-form-field>
+
+      <mat-form-field class="col-sm-6" appearance="outline">
+        <mat-label>Date Of Birth</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="dateOfBirth">
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+
+      <mat-form-field class="col-sm-4" appearance="outline">
+        <mat-label>Phone Number</mat-label>
+        <input matInput placeholder="+1 555-123-4567" type="tel" formControlName="phoneNumber" />
+        @if (registerForm.controls['phoneNumber'].hasError('required')) {
+        <mat-error>Phone number is <strong>required</strong></mat-error>
+        }
+      </mat-form-field>
+
+      <mat-form-field class="col-sm-4" appearance="outline">
+        <mat-label>City</mat-label>
+        <input matInput placeholder="City..." type="tel" formControlName="city" />
+        @if (registerForm.controls['city'].hasError('required')) {
+          <mat-error>City is <strong>required</strong></mat-error>
+        }
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="col-sm-4">
+        <mat-label>Postal Code</mat-label>
+        <input matInput #postalCode type="number" formControlName="postalCode"/>
+        <mat-hint align="end">{{ postalCode.value.length }} / 5</mat-hint>
+        <mat-hint align="start">Must be 5 numbers</mat-hint>
+      </mat-form-field>
+
+      <mat-form-field class="col-12" appearance="outline">
+        <mat-label>Address</mat-label>
+        <textarea matInput placeholder="Address..." formControlName="address"></textarea>
+        @if (registerForm.controls['address'].hasError('required')) {
+        <mat-error>Address is <strong>required</strong></mat-error>
+        }
+      </mat-form-field>
+
+    </mat-card-content>
+
+    <mat-card-actions>
+      <span class="text-muted">Already have an account?<button routerLink="/auth/login" mat-button color="primary" type="button">Login</button></span>
+      <button mat-flat-button color="primary" type="submit">Register</button>
+    </mat-card-actions>
+  </mat-card>
+</form>
+
+@if (loading()) {
+  <div class="overlay"><mat-spinner></mat-spinner></div>
+}

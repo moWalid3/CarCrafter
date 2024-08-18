@@ -44,7 +44,7 @@ export class ShowCarsComponent implements OnInit{
   ngOnInit(): void {
     setTimeout(() => {
       this.updatePaginatedData();
-    }, 1000);
+    }, 1200);
   }
 
   updatePaginatedData() {

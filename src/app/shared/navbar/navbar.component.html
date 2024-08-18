@@ -5,19 +5,19 @@
     <button mat-button routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">Home</button>
     <button mat-button routerLink="/cars" routerLinkActive="active-link">Cars</button>
     <button mat-button routerLink="/about" routerLinkActive="active-link">About</button>
-    <button mat-icon-button matTooltip="Cart" [matBadge]="cartService.cartCars().length" routerLink="/cart" routerLinkActive="active-link">
+    <button mat-icon-button matTooltip="Cart" [matBadge]="authService.userToken() === '' ? 0 : cartService.cartCars().length" routerLink="/cart" routerLinkActive="active-link">
       <mat-icon class="text-main">shopping_cart</mat-icon>
     </button>
   </div>
 
   <div class="auth-links">
-    @if (true) {
-      <button mat-button routerLink="/register" routerLinkActive="active-link">Register</button>
-      <button mat-icon-button matTooltip="Login">
+    @if (authService.userToken() === '') {
+      <button mat-button routerLink="/auth/register" routerLinkActive="active-link">Register</button>
+      <button mat-icon-button matTooltip="Login" routerLink="/auth/login" routerLinkActive="active-link">
         <mat-icon class="text-main">login</mat-icon>
       </button>
     }@else {
-      <button mat-icon-button matTooltip="Logout">
+      <button mat-icon-button matTooltip="Logout" (click)="onLogout()">
         <mat-icon class="text-main">logout</mat-icon>
       </button>
     }

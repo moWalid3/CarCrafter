@@ -1,5 +1,5 @@
 @defer  {
-@if (dataSource().data.length > 0) {
+@if (dataSource().data.length > 0 && authService.userToken() !== '') {
 
   <div @slideIn class="container my-4">
     <h1 class="text-center">Your Cart</h1>

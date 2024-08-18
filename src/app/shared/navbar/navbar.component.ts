@@ -7,6 +7,8 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatBadgeModule } from '@angular/material/badge';
 import { CartService } from '../../core/services/cart.service';
+import { AuthService } from '../../core/services/auth.service';
+import { ToasterService } from '../../core/services/toaster.service';
 
 @Component({
   selector: 'app-navbar',
@@ -25,9 +27,17 @@ import { CartService } from '../../core/services/cart.service';
   styleUrl: './navbar.component.scss',
 })
 export class NavbarComponent implements OnInit{
+  authService = inject(AuthService);
   cartService = inject(CartService);
+  private toaster = inject(ToasterService);
 
   ngOnInit(): void {
     this.cartService.getCartCarsFromLocalStorage();
+  }
+
+  onLogout() {
+    this.toaster.showToaster('Logout completed successfully.')
+    localStorage.removeItem('authToken');
+    this.authService.userToken.set('');
   }
 }

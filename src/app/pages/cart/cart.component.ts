@@ -8,6 +8,7 @@ import {MatPaginator, MatPaginatorModule} from '@angular/material/paginator';
 import { CartCar } from '../../core/models/car.model';
 import { slideInAnimation } from '../../core/animations/animation';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { AuthService } from '../../core/services/auth.service';
 
 @Component({
   selector: 'app-cart',
@@ -20,6 +21,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
   animations: [slideInAnimation],
 })
 export class CartComponent implements AfterViewInit{
+  authService = inject(AuthService);
   private cartService = inject(CartService);
   paginator = viewChild<MatPaginator>(MatPaginator);
   displayedColumns: string[] = ['car', 'selectedColor', 'price', 'quantity', 'total', 'pickupDate', 'delete'];
